@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('layouts/admin_master');
+    return view('layouts/admin_lte_3_master');
 });
 
 Auth::routes();
