@@ -25,6 +25,17 @@
 
 <main role="main" class="container">
     <div class="container main-container-part">
+
+        <!-- Page loader -->
+{{--        <div class="col-md-4 offset-4">--}}
+            <img id="center-loader" class="center-loader text-center" src="{{asset('imgs/loader.gif')}}">
+{{--        </div>--}}
+        <!-- /Page loader  -->
+
+        <!-- Session flash messages -->
+            @include('partials.admin_master_flash_messages')
+        <!-- /Session flash messages -->
+
         @yield('content')
     </div>
 </main><!-- /.container -->

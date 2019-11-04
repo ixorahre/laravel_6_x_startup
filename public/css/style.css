@@ -2,3 +2,11 @@
 {
     min-height: 48em;
 }
+
+.center-loader
+{
+    display: none;
+    margin-left: 40%;
+    max-height: 150px;
+    max-width: 150px;
+}
