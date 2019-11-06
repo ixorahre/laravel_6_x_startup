@@ -11,11 +11,15 @@
 |
 */
 Route::get('/home', 'HomeController@index')->name('home');
+Route::post('/file-upload', 'HomeController@fileUploadTests')->name('file_upload_test');
 
 Route::get('/', function () {
     return view('layouts/admin_master');
 });
 
 Auth::routes();
+
+
+Route::view('/file', 'file_test');
 
 
