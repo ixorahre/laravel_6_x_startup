@@ -23,8 +23,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        //sweetFlashMessageShow('top-end','success', 'CECKING',false,3000);
-        //sweetFlashIsConfirmOrErrorAutoFade('Deleted!', 'Your data has been deleted', 'success');
+//        sweetFlashIsDelete();
+//        sweetFlashIsConfirmOrError('Updated!', 'Your record has beed updated', 'success');
+        isConfirm('Are you sure?', 'form.submit()');
 
         return view('layouts.admin_master');
 

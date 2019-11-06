@@ -66,12 +66,49 @@
 
     $(document).ready(function(){
 
-        // swal({
-        //     position: "top-end",
-        //     type: "success",
-        //     title: "Your work has been saved",
-        //     showConfirmButton: false,
-        //     timer: 3000
+        //SOURCE: https://sweetalert2.github.io/
+
+        // const swalWithBootstrapButtons = Swal.mixin({
+        //     customClass: {
+        //         confirmButton: 'btn btn-success',
+        //         cancelButton: 'btn btn-danger'
+        //     },
+        //     buttonsStyling: false
+        // })
+        //
+        // swalWithBootstrapButtons.fire({
+        //     title: 'Are you sure?',
+        //     text: "You won't be able to revert this!",
+        //     icon: 'warning',
+        //     showCancelButton: true,
+        //     confirmButtonText: 'Yes, delete it!',
+        //     cancelButtonText: 'No, cancel!',
+        //     reverseButtons: true
+        // }).then((result) => {
+        //     if (result.value) {
+        //         console.log('YESSSSSSSSSSSSSSSSSSSSSSSSS');
+        //         swalWithBootstrapButtons.fire(
+        //             'Deleted!',
+        //             'Your file has been deleted.',
+        //             'success'
+        //         )
+        //     } else if (
+        //         /* Read more about handling dismissals below */
+        //         result.dismiss === Swal.DismissReason.cancel
+        //     ) {
+        //         console.log('NOOOOOOOOOOOOOOOOOOOOOOO');
+        //         swalWithBootstrapButtons.fire(
+        //             'Cancelled',
+        //             'Your imaginary file is safe :)',
+        //             'error'
+        //         )
+        //     }
+        // })
+
+        // Swal.fire({
+        //     icon: 'error',
+        //     title: 'Oops...',
+        //     text: 'Something went wrong!'
         // })
 
     //     const swalWithBootstrapButtons = Swal.mixin({
@@ -109,7 +146,7 @@
     //         }
     //     })
     //
-    // });
+    });
 
 
 
