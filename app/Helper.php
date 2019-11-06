@@ -128,8 +128,8 @@ if(!function_exists('isConfirm')) {
                 })
                 
                 swalWithBootstrapButtons.fire({
-                  title: "Are you sure?",
-                  text: "You won\'t be able to revert this!",
+                  title: "Are you sure? ",
+                  text: "'.$confirmText.'",
                   icon: "warning",
                   showCancelButton: true,
                   confirmButtonText: "Yes, delete it!",
