@@ -19,10 +19,17 @@
     <link href="https://cdn.datatables.net/buttons/1.2.4/css/buttons.dataTables.min.css" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/min/dropzone.min.css" rel="stylesheet" />
+
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/8.11.8/sweetalert2.min.css" rel="stylesheet" />
+
+
     <link href="{{ asset('admin_lte_3/css/adminltev3.css') }}" rel="stylesheet" />
     <link href="{{ asset('admin_lte_3/css/style.css') }}" rel="stylesheet" />
 
     @yield('styles')
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/8.11.8/sweetalert2.all.min.js"></script>
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -38,6 +45,17 @@
 <!-- Content Wrapper. Contains page content -->
 
     <div class="content-wrapper main-container-part">
+
+        <!-- Page loader -->
+        {{--        <div class="col-md-4 offset-4">--}}
+        <img id="center-loader" class="center-loader text-center" src="{{asset('imgs/loader.gif')}}">
+        {{--        </div>--}}
+        <!-- /Page loader  -->
+
+        <!-- Session flash messages -->
+        @include('partials.admin_master_flash_messages')
+        <!-- /Session flash messages -->
+
         <!-- Main content -->
         <section class="content">
             @yield('content')

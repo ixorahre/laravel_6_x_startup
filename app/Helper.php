@@ -3,8 +3,8 @@
 /**
  * This is a helper file having some utility function for reuse
  *
- * @author     Habibur Rahman
- * @copyright  Copyright © 2019 Club levis
+ * @author     Habibur Rahman (Senior Software Engineer)
+ * @copyright  Copyright © 2019 ixora solution
  * @license    https://ixorasolution.com/
  * @version    0.0.1
  *
@@ -13,13 +13,11 @@
  */
 
 
-
 if(!function_exists('pageLoader')) {
     /**
      * data bind to the query
      *
      * @param $status
-     * @author Habibur Rahman
      *
      * @return void
      */
@@ -45,46 +43,9 @@ if(!function_exists('pageLoader')) {
     }
 }
 
-if (!function_exists('sweetFlashMessageShow')) {
+if(!function_exists('sweetFlashIsDelete')) {
 
     /**
-     * @param string $position
-     * @param string $type
-     * @param string $title
-     * @param boolean $showConfirmButton
-     * @param integer $timer
-     * @author Habibur Rahman
-     *
-     * @return void
-     */
-    function sweetFlashMessageShow($position = 'top-end', $type, $title, $showConfirmButton, $timer = 1500)
-    {
-        echo '
-            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
-            <script type="text/javascript">
-            
-            $(document).ready(function(){
-                swal({
-                    position: "' . $position . '",
-                    type: "' . $type . '",
-                    title: "' . $title . '",
-                    showConfirmButton: "' . $showConfirmButton . '",
-                    timer: "' . $timer . '"
-                })
-            });
-            
-            </script>
-            ';
-    }
-}
-
-
-if (!function_exists('sweetFlashIsDelete')) {
-
-    /**
-     * @author Habibur Rahman
-     *
      * @return void
      *
      */
@@ -105,27 +66,7 @@ if (!function_exists('sweetFlashIsDelete')) {
                 cancelButtonColor: "#d33",
                 confirmButtonText: "Yes, delete it!"
                 })
-            }).then((result) =>
-            {
-                if (result.value) {
-                    form.submit(); 
-                    swalWithBootstrapButtons.fire(
-                      "Deleted!",
-                      "Your file has been deleted.",
-                      "success"
-                    )
-                  }
-                else if (
-                    /* Read more about handling dismissals below */
-                    result.dismiss === Swal.DismissReason.cancel
-                  ) {
-                    swalWithBootstrapButtons.fire(
-                      "Cancelled",
-                      "Your data is safe",
-                      "error"
-                    )
-                  }
-            }
+            })
             
             </script>
             ';
@@ -133,17 +74,16 @@ if (!function_exists('sweetFlashIsDelete')) {
 }
 
 
-if (!function_exists('sweetFlashIsConfirmOrError')) {
+if(!function_exists('sweetFlashIsConfirmOrError')) {
 
     /**
+     * @return void
      * @param string $title
      * @param string $message
      * @param string $type
-     * @author Habibur Rahman
      *
-     * @return void
      */
-    function sweetFlashIsConfirmOrError($title, $message, $type = 'success')
+    function sweetFlashIsConfirmOrError($title,$message,$type = 'success')
     {
         echo '
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -152,9 +92,9 @@ if (!function_exists('sweetFlashIsConfirmOrError')) {
             
             $(document).ready(function(){
                 Swal.fire(
-                            "' . $title . '",
-                            "' . $message . '",
-                            "' . $type . '"
+                            "'.$title.'",
+                            "'.$message.'",
+                            "'.$type.'"
                         )
             })
             
@@ -162,4 +102,74 @@ if (!function_exists('sweetFlashIsConfirmOrError')) {
             ';
     }
 }
+
+
+if(!function_exists('isConfirm')) {
+
+    /**
+     * @return void
+     *
+     */
+    function isConfirm($confirmText, $action = null)
+    {
+        echo '
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/8.11.8/sweetalert2.all.min.js"></script>
+            <script type="text/javascript">
+            
+            $(document).ready(function(){
+                var theAction = "'.$action.'"
+                const swalWithBootstrapButtons = Swal.mixin({
+                  customClass: {
+                    confirmButton: "btn btn-success",
+                    cancelButton: "btn btn-danger"
+                  },
+                  buttonsStyling: false
+                })
+                
+                swalWithBootstrapButtons.fire({
+                  title: "Are you sure? '.$confirmText.'",
+                  text: "You won\'t be able to revert this!",
+                  icon: "warning",
+                  showCancelButton: true,
+                  confirmButtonText: "Yes, delete it!",
+                  cancelButtonText: "No, cancel!",
+                  reverseButtons: true
+                }).then((result) => {
+                  if (result.value) {
+                      //Call the next method or action 
+                      if(theAction != null || theAction != "")
+                          {
+                              theAction;
+                          }
+                    swalWithBootstrapButtons.fire(
+                      "Done!",
+                      "Your request has been successfully done",
+                      "success"
+                    )
+                  } else if (
+                    /* Read more about handling dismissals below */
+                    result.dismiss === Swal.DismissReason.cancel
+                  ) {
+                    
+                    swalWithBootstrapButtons.fire(
+                        "Cancelled",
+                        "Your request has been cancelled",
+                        "error"
+                    )
+                  }
+                })
+            })
+            
+            </script>
+            ';
+    }
+}
+
+
+
+
+
+
+
 
