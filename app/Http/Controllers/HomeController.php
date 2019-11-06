@@ -23,11 +23,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        pageLoader(true);
-
-
-        pageLoader(false);
-
+        //sweetFlashMessageShow('top-end','success', 'CECKING',false,3000);
+        //sweetFlashIsConfirmOrErrorAutoFade('Deleted!', 'Your data has been deleted', 'success');
 
         return view('layouts.admin_master');
 
