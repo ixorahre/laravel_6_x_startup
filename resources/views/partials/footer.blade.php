@@ -1,5 +1,5 @@
 <!-- Footer -->
-<footer class="page-footer footer">
+<footer class="page-footer footer pt-2 pb-2">
     <div class="row">
         <div class="col-lg-6 col-md-6 text-center col-sm-6">
             <span class="py-3">Created by ixora solution</span>
