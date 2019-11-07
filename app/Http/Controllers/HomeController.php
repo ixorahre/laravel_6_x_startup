@@ -2,12 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Traits\FileTrait;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    //use FileTrait;
+
     /**
      * Create a new controller instance.
      *
@@ -35,10 +34,5 @@ class HomeController extends Controller
 
     }
 
-    public function fileUploadTests(Request $request)
-    {
-        //$this->showUploadFile($request->file('fileToUpload', 'imgs/'));
-        die('controller');
-    }
 
 }

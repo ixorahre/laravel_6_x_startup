@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 <body>
-    <form action="{{route('file_upload_test')}}" method="post" enctype="multipart/form-data">
+    <form action="{{route('test_me')}}" method="post" enctype="multipart/form-data">
+        @csrf
         Select image to upload:
         <input type="file" name="fileToUpload" id="fileToUpload">
         <input type="submit" value="Upload Image" name="submit">
